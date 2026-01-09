@@ -1,0 +1,13 @@
+# JSON files (includes keys.json with API secrets)
+*.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# IDE
+.idea/
+
+# Claude Code
+.claude/
