@@ -32,11 +32,12 @@ class LLMTester:
         """Register a new LLM provider."""
         self.providers[key] = provider
 
+    # TODO: Implement provider-specific rate limits (e.g., delay_seconds per provider key)
     def test_capability(self,
                         prompt: str,
                         providers: Optional[List[str]] = None,
                         repetitions: int = 1,
-                        delay_seconds: float = 1.0) -> Dict[str, List[Dict[str, Any]]]:
+                        delay_seconds: float = 30.0) -> Dict[str, List[Dict[str, Any]]]:
         """
         Test a specific capability across multiple LLM providers.
 
@@ -130,7 +131,7 @@ class LLMTester:
                             prompt: str,
                             providers: Optional[List[str]] = None,
                             repetitions: int = 3,
-                            delay_seconds: float = 1.0,
+                            delay_seconds: float = 30.0,
                             save_immediately: bool = True):
         """
         Run a complete capability test and optionally save results immediately.

@@ -9,7 +9,7 @@ def main():
         test_name="Quantum Computing Explanation",
         prompt="Explain quantum computing in exactly 3 sentences.",
         repetitions=2,
-        delay_seconds=1.0
+        delay_seconds=30.0
     )
 
     print("\nTest completed! Check 'llm_test_results.json' for detailed results.")

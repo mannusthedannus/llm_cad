@@ -93,9 +93,9 @@ class AnthropicProvider(LLMProvider):
 class GoogleProvider(LLMProvider):
     """Google Gemini provider."""
 
-    API_BASE = 'https://generativelanguage.googleapis.com/v1/models'
+    API_BASE = 'https://generativelanguage.googleapis.com/v1beta/models'
 
-    def __init__(self, default_model: str = 'gemini-pro', keys_file: str = 'keys.json'):
+    def __init__(self, default_model: str = 'gemini-2.5-flash', keys_file: str = 'keys.json'):
         super().__init__('Google', default_model, keys_file)
 
     def send_prompt(self, prompt: str, model: Optional[str] = None) -> Dict[str, Any]:
@@ -117,6 +117,5 @@ class GoogleProvider(LLMProvider):
 # Registry of default providers
 DEFAULT_PROVIDERS = {
     'openai': OpenAIProvider,
-    'anthropic': AnthropicProvider,
-    'google': GoogleProvider,
+    'google': GoogleProvider
 }
