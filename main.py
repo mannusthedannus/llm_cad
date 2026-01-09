@@ -1,16 +1,19 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+"""Entry point for LLM capability testing."""
+from tester import LLMTester
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def main():
+    tester = LLMTester()
+
+    results = tester.run_capability_test(
+        test_name="Quantum Computing Explanation",
+        prompt="Explain quantum computing in exactly 3 sentences.",
+        repetitions=2,
+        delay_seconds=1.0
+    )
+
+    print("\nTest completed! Check 'llm_test_results.json' for detailed results.")
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    main()
